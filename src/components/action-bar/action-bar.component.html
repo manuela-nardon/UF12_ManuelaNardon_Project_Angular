@@ -1,0 +1,8 @@
+<div>
+  <p-button label="Visualizza Tutto" [routerLink]="['/']"/>
+  <p-button label="Genera Immagine Gattino Casuale" (onClick)="catManagerSrv.recuperaPostViaHttpImage()"/>
+  <p-button label="Genera Gif Gattino Casuale" (onClick)="catManagerSrv.recuperaPostViaHttpGif()"/>
+  <p-button label="Carica Immagine" [routerLink]="['/aggiungi-immagine']" routerLinkActive="router-link-active" />
+  <p-button label="Scegli Gattino Esistente"[routerLink]="['/seleziona-immagine']" routerLinkActive="router-link-active" />
+  <p-button label="Recovery Gattino ❤️‍🩹😿" severity="success" />
+</div>
