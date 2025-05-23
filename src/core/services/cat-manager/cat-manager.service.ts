@@ -19,9 +19,9 @@ export class CatManagerService {
 
   constructor() {}
 
-  getCatPost(): void {
+  getCatPost(isImage: boolean = true): void {
     this.#http
-      .get<Cat>(this.#URL_random_image)
+      .get<Cat>(isImage? this.#URL_random_image:this.#URL_random_gif)
       .pipe(
         retry(2),
         catchError((err) => {
