@@ -43,6 +43,7 @@ export class CatManagerService {
           },
         ]);
       });
+      console.log(this.catListComp())
   }
 
   addCatPost() {}

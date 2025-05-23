@@ -1,7 +1,7 @@
 
 <header>
   <p-button label="Visualizza Tutto" [routerLink]="['/']"/>
-  <p-button label="Genera Immagine Gattino Casuale" />
+  <p-button label="Genera Immagine Gattino Casuale" (click)="service.getCatPost()"/>
   <p-button label="Genera Gif Gattino Casuale"/>
   <p-button label="Carica Immagine" [routerLink]="['/aggiungi-immagine']" routerLinkActive="router-link-active" />
   <p-button label="Scegli Gattino Esistente"[routerLink]="['/seleziona-immagine']" routerLinkActive="router-link-active" />

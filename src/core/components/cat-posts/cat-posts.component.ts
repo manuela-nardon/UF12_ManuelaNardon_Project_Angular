@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { CatCardComponent } from '../cat-card/cat-card.component';
+import { CatManagerService } from '../../services/cat-manager/cat-manager.service';
 
 @Component({
   selector: 'app-cat-posts',
@@ -8,5 +9,5 @@ import { CatCardComponent } from '../cat-card/cat-card.component';
   styleUrl: './cat-posts.component.scss'
 })
 export class CatPostsComponent {
-
+  service = inject(CatManagerService)
 }
