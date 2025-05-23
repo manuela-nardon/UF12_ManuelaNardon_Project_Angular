@@ -21,7 +21,7 @@ export class CatManagerService {
 
   getCatPost(isImage: boolean = true): void {
     this.#http
-      .get<Cat>(isImage? this.#URL_random_image:this.#URL_random_gif)
+      .get<Cat>(isImage ? this.#URL_random_image : this.#URL_random_gif)
       .pipe(
         retry(2),
         catchError((err) => {
@@ -45,8 +45,21 @@ export class CatManagerService {
       });
   }
 
-  addCatPost() {}
-  updateCatPost() {}
-  deleteCatPost() {}
+  addCatPost(newCat: Cat): void {
+    this.#catList.update((list) => [...list, newCat]);
+  }
+
+  updateCatPost(updatedCat: Cat): void {
+    this.#catList.update((list) =>
+      list.map((cat) =>
+        cat.id === updatedCat.id ? { ...cat, ...updatedCat } : cat
+      )
+    );
+  }
+
+  deleteCatPost(catId: string): void {
+    this.#catList.update((list) => list.filter((cat) => cat.id !== catId));
+  }
+
   recoveryCatPost() {}
 }
