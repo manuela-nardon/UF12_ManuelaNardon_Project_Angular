@@ -15,7 +15,7 @@ export const routes: Routes = [
     component:UploadKittyComponent
   },
   {
-    path:'edit-kitty',
+    path:'edit-kitty/:id',
     component:EditCatComponent
   },
   {

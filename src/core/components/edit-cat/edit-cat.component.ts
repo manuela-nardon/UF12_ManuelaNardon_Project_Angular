@@ -26,8 +26,8 @@ export class EditCatComponent {
   tags: ITag[] = [];
   #router = inject(Router)
   #routerAct = inject(ActivatedRoute)
-  kitty = signal<Cat>(this.catService.catListComp().filter(el => el.id === this.#routerAct.snapshot.paramMap.get('id'))[0]);
   selectedTags!: ITag[];
+  kitty = signal<Cat>(this.catService.catListComp().filter(el => el.id === this.#routerAct.snapshot.paramMap.get('id'))[0]);
 
   constructor(private messageService: MessageService) {
     this.tags = [
