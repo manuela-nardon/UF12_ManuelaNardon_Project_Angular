@@ -18,8 +18,5 @@ export class CatCardComponent {
   service = inject(CatManagerService)
 
   kitty = input.required<Cat>();
-
-  constructor(){
-
-  }
+  deletes = input.required<boolean>();
 }

@@ -1,1 +1,8 @@
-<p>recovery-cat works!</p>
+<div class="container">
+  @for(element of this.service.catListComp(); track $index){
+    <app-cat-card [kitty]="element" [deletes]=false></app-cat-card>
+  }
+  @empty{
+    <h1>There's no post</h1>
+  }
+</div>

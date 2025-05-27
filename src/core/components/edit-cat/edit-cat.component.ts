@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 
 @Component({
   selector: 'app-edit-cat',
@@ -7,5 +7,4 @@ import { Component } from '@angular/core';
   styleUrl: './edit-cat.component.scss'
 })
 export class EditCatComponent {
-
 }

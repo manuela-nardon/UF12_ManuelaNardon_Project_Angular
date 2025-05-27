@@ -1,6 +1,6 @@
 <div class="container">
   @for(element of this.service.catListComp(); track $index){
-    <app-cat-card [kitty]="element"></app-cat-card>
+    <app-cat-card [kitty]="element" [deletes]=true></app-cat-card>
   }
   @empty{
     <h1>There's no post</h1>
