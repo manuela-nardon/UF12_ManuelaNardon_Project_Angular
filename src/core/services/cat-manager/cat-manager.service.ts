@@ -17,6 +17,8 @@ export class CatManagerService {
   #catList = signal<Cat[]>([]);
   readonly catListComp = computed(() => this.#catList());
 
+  #recoveryList = signal<Cat[]>([]);
+  readonly recoveryListComp = computed(() => this.#recoveryList());
   constructor() {}
 
   getCatPost(isImage: boolean = true): void {
@@ -58,8 +60,18 @@ export class CatManagerService {
   }
 
   deleteCatPost(catId: string): void {
+    let SadCat : Cat;
+    SadCat = this.#catList().filter((cat) => cat.id === catId)[0]
     this.#catList.update((list) => list.filter((cat) => cat.id !== catId));
+    this.#recoveryList.update((list) => [...list, SadCat]);
+    console.log(this.#recoveryList())
+
   }
 
-  recoveryCatPost() {}
+  recoveryCatPost(catId : string) {
+    let HappyCat : Cat;
+    HappyCat = this.#recoveryList().filter((cat) => cat.id === catId)[0]
+    this.#recoveryList.update((list) => list.filter((cat) => cat.id !== catId));
+    this.#catList.update((list) => [...list, HappyCat]);
+  }
 }
