@@ -1,5 +1,5 @@
 <div class="container">
-  @for(element of this.service.catListComp(); track $index){
+  @for(element of this.service.recoveryListComp(); track $index){
     <app-cat-card [kitty]="element" [deletes]=false></app-cat-card>
   }
   @empty{

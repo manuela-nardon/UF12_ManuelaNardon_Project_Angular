@@ -11,13 +11,24 @@
   "
   [style]="{ width: '23.5rem', overflow: 'hidden' }"
 >
-  <p-button
+  @if(deletes()){
+    <p-button
     icon="pi pi-times"
     [rounded]="true"
     severity="danger"
     [outlined]="true"
-    (onClick)="service.deleteCatPost(kitty().id)"
-  />
+    (onClick)="service.deleteCatPost(kitty().id)"/>
+  }
+  @else{
+
+    <p-button
+    icon="pi pi-times"
+    [rounded]="true"
+    severity="success"
+    [outlined]="true"
+    (onClick)="service.recoveryCatPost(kitty().id)"/>
+  }
+
   <p-image src="{{ kitty().url }}" alt="Image" height="250" [preview]="true" />
   <p><strong>ID</strong>: {{ kitty().id }}</p>
   <p>

@@ -4,7 +4,7 @@
   <p-button label="Genera Immagine Gattino Casuale" (onClick)="service.getCatPost()"/>
   <p-button label="Genera Gif Gattino Casuale" (onClick)="service.getCatPost(false)"/>
   <p-button label="Carica Immagine" [routerLink]="['/upload-kitty']" routerLinkActive="router-link-active" />
-  <p-button label="Recovery Gattino ❤️‍🩹😿" severity="success" />
+  <p-button label="Recovery Gattino ❤️‍🩹😿" [routerLink]="['/recovery-kitty']" routerLinkActive="router-link-active" severity="success" />
 
 </header>
 <router-outlet>
