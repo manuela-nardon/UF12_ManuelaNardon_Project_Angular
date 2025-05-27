@@ -1,0 +1,14 @@
+<div class="container">
+  <img src="{{kitty().url}}" alt="">
+  <div class="infos">
+    <h1>Uploaded via {{uploaded}} </h1>
+    <h2>My ID: {{kitty().id}}😺</h2>
+    <div class="tags">
+      @for (tag of kitty().tags; track $index) {
+      <p-tag value="{{tag}}" [rounded]="true" />
+      }
+      @empty {
+      <p-tag value="Nessun tag" [rounded]="true" />
+      }</div>
+  </div>
+</div>
